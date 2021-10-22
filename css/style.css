@@ -1,0 +1,732 @@
+/* style for all */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body style */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  
+}
+
+ /* Main container */
+
+ .main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-height: 1000vh;
+
+}
+
+.main > #info,
+.main > #icones,
+.main > #aside,
+.main > #section
+{
+  /* height: 300px; */
+  margin-right: 10px;
+  margin-left: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.main > #info {
+  grid-column: 1 / 5;
+  text-align: center;
+  height: 100px;
+}
+
+#info h1,
+.contact h1 {
+  font-family: 'Zen Tokyo Zoo', cursive;
+  padding: 40px;
+}
+
+.main > #icones {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+}
+
+#icones ul {
+  list-style-type: none;
+}
+
+#icones li {
+    padding: 30px;
+    
+}
+
+#icones a {
+    font-size: 30px;
+    height: fit-content;
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+#icones i {
+    background-color: #02063b;
+    color: #ffffff;
+    font-size: 30px;
+    padding: 20px;
+      
+  }
+  
+  #icones a:hover {
+    color: white;
+    /* background-color: #ffffff; */
+    font-weight: bolder;
+
+  }
+
+.main > #aside {
+  background: url("../img/profile2.jpg") no-repeat;
+  background-size: cover;
+  grid-column: 2 / 3;
+  
+  border-right: 3px solid white;
+  margin-left: 50px;
+  margin-right: 50px;
+  -moz-box-shadow: 5px 10px 18px #888;
+  -webkit-box-shadow: 5px 10px 18px #888;
+  box-shadow: 5px 10px 18px #888;
+  
+}
+
+#section .text-left {
+  color: #ffffff;
+}
+
+.text-left > p {
+  font-size: 17px;
+  font-weight: bolder;
+  color: white;
+  padding: 10px;
+
+}
+
+.main > #section {
+  background: url("../img/nature.jpg") no-repeat;
+  background-size: cover;
+  grid-column: 3 / 5;
+ 
+  -moz-box-shadow: 5px 10px 18px #888;
+  -webkit-box-shadow: 5px 10px 18px #888;
+  box-shadow: 5px 10px 18px #888;
+
+  text-align: center;
+  border-left: 3px solid white;
+  margin-right: 50px;
+ 
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Navbar */
+.navbar {
+
+  background: url("../img/info.jpg") no-repeat;
+  background-size: cover;
+  border-bottom: 5px solid rgba(52, 52, 238, 0.247);
+  grid-column: 1 / 5;
+  
+}
+
+.container-fluid .navbar-collapse .navbar-nav .nav-item {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+
+.container-fluid .navbar-brand {
+  color:#ffffff;
+  display: flex;
+  justify-content: flex-start;
+  order: 0;
+  font-size: 20px;
+  padding-left: 40px;
+  text-decoration: none;
+  padding: 5px;
+  transition-duration: 3000ms;
+  font-family: 'Zen Tokyo Zoo', cursive;
+}
+
+.animate__animated.animate__backInLeft {
+  --animate-duration: 3s;
+  --animate-delay: 0.5s;
+}
+
+
+.navbar-brand:hover {
+  
+  background-color: rgb(52, 52, 238);
+  transition-duration: 1000ms;
+  padding: 15px;
+  border-radius: 50px;
+  
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  font-weight: bolder;
+
+}
+
+.navbar-dark .navbar-nav .nav-item:hover {
+  
+  border-bottom: 2px solid white;
+  --animate-duration: 5s;
+  transition-duration: 500ms;
+ 
+}
+
+.fab.fa-github-square.animate__animated.animate__backInDown {
+  --animate-duration: 3s;
+  --animate-delay: 0.5s;
+}
+
+.fab.fa-linkedin.animate__animated.animate__backInDown {
+  --animate-duration: 5s;
+  --animate-delay: 1s;
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .main > #info,
+  .main > #aside,
+  .main > #section,
+  .main > #icones
+   {
+
+    grid-column: 1 /4;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    height: 200px;
+    flex-wrap: nowrap;
+  }
+
+  .main > #aside {
+    order: 0;
+  }
+
+  .main > #section {
+    order: 1;
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .main > #icones {
+    order: 2;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    
+  }
+
+  #section .responsive {
+    font-size: calc(10px + 0.5vw);
+  }
+
+}
+
+
+/* tablet */
+
+@media (min-width: 601px) and (max-width: 992px) {
+
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main > #info,
+  .main > #aside,
+  .main > #section,
+  .main > #icones
+   {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main #info {
+    grid-column: 1 / 3;
+    order: 0;
+  }
+
+  .main > #aside {
+    order: 1;
+    grid-column: 3 / 5;
+    width: 100%;
+  }
+
+  .main > #section {
+    grid-column: 1 / 3;
+   order: 2;
+  }
+
+  .main > #icones {
+    grid-column:  3/ 5;
+    order: 3;
+    
+  }
+
+  #section .responsive {
+    font-size: calc(10px + 0.5vw);
+  }
+
+}
+/* normal screen */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
+
+}
+
+/* widescreen */
+@media(min-width: 1201px) and (max-width: 1920px) {
+  .main {
+    grid-template-columns: repeat(3, 4fr);
+  }
+}
+
+ 
+  /*  Contact form starts here */
+
+  .contact {
+  
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+
+  .contact h1 {
+    
+    padding: 20px;
+    text-align: center;
+  }
+
+  input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    padding: 20px;
+
+    -moz-box-shadow: 5px 10px 18px #888;
+    -webkit-box-shadow: 5px 10px 18px #888;
+    box-shadow: 5px 10px 18px #888;
+  }
+  
+  input[type=submit] {
+    background-color: #0489aa;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #02063b;
+  }
+  
+
+  /* mobile */
+
+@media (max-width: 600px) {
+  .main .contact {
+    grid-template-columns: 1fr;
+    grid-column: 1 /4;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+/* tablet */
+
+@media (min-width: 601px) and (max-width: 992px) {
+
+  .main .contact {
+    grid-template-columns: 1fr;
+    grid-column: 1 /4;
+  }
+}
+
+/* normal screen */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .main .contact {
+    grid-template-columns: 1fr;
+    grid-column: 1 /4;
+  }
+
+}
+
+/* widescreen */
+@media(min-width: 1201px) and (max-width: 1920px) {
+  .main .contact {
+    grid-template-columns: 1fr;
+    grid-column: 1 /4;
+  }
+}
+
+
+/* extra large screens */
+@media (min-width: 1921px) {
+  .main .contact {
+      width: 1920px;
+      margin: auto;
+      grid-template-columns: 1fr;
+      grid-column: 1 /4;
+  }
+}
+
+/* Projects page starts here*/
+
+.mainprojects  {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  
+}
+
+.project {
+  grid-template-columns: 1fr;
+      grid-column: 1 /5;
+  text-align: center;
+  padding: 40px;
+}
+
+.project h1 {
+  font-family: 'Zen Tokyo Zoo', cursive;
+  padding: 40px;
+}
+
+.bg1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  height: 150px;
+  background: url('../img/city-3213676_1920.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  max-width: 100%;
+  
+  -moz-box-shadow: 5px 10px 18px #888;
+  -webkit-box-shadow: 5px 10px 18px #888;
+  box-shadow: 5px 10px 18px #888;
+
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+
+}
+
+.bg1:hover {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.bg1 > a {
+  text-decoration: none;
+  color: white;
+  
+}
+
+.bg1 > a > i {
+  font-size: 30px;
+  padding: 10px;
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+  .mainprojects  {
+    grid-template-columns: 1fr;
+    grid-column: 1 /4;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+}
+
+/* tablet */
+
+@media (min-width: 601px) and (max-width: 992px) {
+
+  .mainprojects {
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 100px;
+}
+
+  #one,
+  #three,
+  #five,
+  #seven {
+    grid-column: 1 / 3;
+
+  }
+  #two,
+  #four,
+  #six,
+  #eight {
+    grid-column: 3 / 5;
+
+  }
+
+
+}
+
+/* normal screen */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .mainprojects {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 1 /5;
+  }
+
+}
+
+/* widescreen */
+@media(min-width: 1201px) and (max-width: 1920px) {
+  .mainprojects {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 1 /5;
+  }
+}
+
+
+/* extra large screens */
+@media (min-width: 1921px) {
+  .mainprojects {
+      width: 1920px;
+      margin: auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: 1 /5;
+  }
+}
+
+/* About me page starts here */
+
+.wrapper {
+  text-align: center;
+  color: #ffffff;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  min-height:100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("../img/wood.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.testimonial {
+  padding: 30px 100px;
+}
+article h1 {
+  
+  font-family: 'Zen Tokyo Zoo', cursive;
+  
+}
+
+article img {
+  height:  225px;
+  width: 225px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  margin-top: 60px;
+}
+blockquote {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+article h5 {
+  text-transform: uppercase;
+  font-size: 28px;
+  margin-top: 30px;
+  letter-spacing: 2.5px;
+}
+article p {
+  font-size: 17px;
+}
+
+.menu {
+  /* letter-spacing: 4px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.menu a {
+  text-decoration: none;
+
+}
+
+.menu .btn-1,
+.menu .btn-2 {
+  width: 200px;
+  height: 50px;
+  border: none;
+ 
+}
+
+/*  first button */
+
+.btn-1 {
+  box-shadow: inset 0 0 0 0 #5b5b63;
+  background-color: #25252A;
+  color: white;
+  border-radius: 4px;
+  transition: ease-out 0.3s;
+  /* font-size: 1rem; */
+  outline: none;
+ 
+}
+
+.btn-1:hover {
+  box-shadow: inset 200px 0 0 0 pink;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+/* second button */
+
+.btn-2 {
+  
+  color: black;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: ease-out 0.3s;
+  /* font-size: 1rem; */
+  outline: none;
+  background-color: pink;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.btn-2:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.btn-2::before {
+  transition:  0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #25252A;
+}
+
+.btn-2:hover::before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+    
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+  article img  {
+    max-width: 100%;
+    height: auto;
+    
+  }
+
+  .menu {
+    max-width: 100%;
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+ 
+  }
+
+  .menu .btn-1,
+  .menu .btn-2 {
+    margin-bottom: 20px;
+
+  }
+
+}
+
+
+  /* Footer */
+
+.footer {
+    font-weight: lighter;
+    padding: 12px;
+    border-top: 5px solid rgb(52, 52, 238);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position:fixed;
+    bottom: 0px;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: white;
+    
+}
+
+  
+
